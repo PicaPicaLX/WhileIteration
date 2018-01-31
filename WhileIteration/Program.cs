@@ -11,7 +11,7 @@ namespace WhileIteration
         static void Main(string[] args) // 创建一个控制台，能够玩游戏
         {
             bool displayMenu = true; // bool变量，类似布尔值
-            while (displayMenu == true) // while循环当括号内为true时，执行花括号里的，否则执行花括号外的
+            while (displayMenu) // while循环当括号内为true时，执行花括号里的，否则执行花括号外的
             {
                 displayMenu=MainMenu(); // 调用自定义方法"MainMenu"
             }
@@ -21,6 +21,7 @@ namespace WhileIteration
 
         private static bool MainMenu() // 自定义方法"MainMenu"，在控制台显示以下选项并在其之后返回布尔值
         {
+            Console.Clear();
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1) Option 1");
             Console.WriteLine("2) Option 2");
@@ -49,12 +50,23 @@ namespace WhileIteration
 
         private static void PrintNumbers() // 自定义方法"PrintNumbers"，在控制台显示"Print numbers"
         {
+            Console.Clear();
             Console.WriteLine("Print numbers");
+            Console.Write("Type a number: ");
+            int result = int.Parse(Console.ReadLine());
+            int counter = 1;
+            while (counter < result + 1)
+            {
+                Console.Write(counter);
+                Console.Write("-");
+                counter ++;
+            }
             Console.ReadLine();
         }
 
         private static void GuessingGame()
         {
+            Console.Clear();
             Console.WriteLine("Guessing game!"); // 自定义方法"Guessing game"，在控制台显示"Guessing game！"
             Console.ReadLine();
         }
